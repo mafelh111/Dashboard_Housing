@@ -50,7 +50,7 @@ fig_crecimiento = update_fig_layout(px.line(crecimiento, x='Año', y='Tasa_creci
 fig_pib = update_fig_layout(px.line(pib, x='Año', y='Tasa PIB', title='Tasa de crecimiento del PIB de China'), 'Tasa PIB(%)')
 
 # Diseño del Dashboard
-st.title('Tablero de Indicadores de China')
+st.title('Análisis Contextual del Mercado Inmobiliario de Pekín')
 
 # Usando columnas para mejor distribución
 col1, col2 = st.columns(2)
