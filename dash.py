@@ -1,7 +1,6 @@
 import pandas as pd
 import plotly.express as px
 import streamlit as st
-import streamlit.components.v1 as components
 from keplergl import KeplerGl
 from streamlit_keplergl import keplergl_static
 
@@ -42,7 +41,7 @@ pib = pib[pib['Año'] >= 1990]
 pib['Tasa PIB'] = pib['Tasa PIB'].astype(float)
 pib = pib.reset_index(drop=True)
 
-# Creación de gráficos (mismo código que antes)
+# Creación de gráficos
 def update_fig_layout(fig, y_title):
     fig.update_traces(mode='lines+markers', marker=dict(size=10, line=dict(width=2, color='DarkSlateGrey')))
     fig.update_layout(xaxis_title='Año', yaxis_title=y_title)
@@ -67,8 +66,34 @@ st.plotly_chart(fig_pib)
 
 st.markdown("### Mapa Interactivo: Servicios Urbanos y Transporte en Pekín")
 
-# Genera el mapa de Kepler.gl (reemplaza esto con tu configuración)
-kepler_map = KeplerGl(height=600)  # Puedes personalizar la altura y otros parámetros
+# Configuración del mapa directamente desde el JSON
+config_mapa = {
+    "version": "v1",
+    "config": {
+        "visState": {
+            "filters": [],
+            "layers": [{"id": "92v23lj", "type": "geojson", "config": {"dataId": "ecbukq", "columnMode": "geojson", "label": "beijing_services", "color": [246, 209, 138], "highlightColor": [252, 242, 26, 255], "columns": {"geojson": "_geojson"}, "isVisible": True, "visConfig": {"opacity": 0.77, "strokeOpacity": 0.8, "thickness": 2.1, "strokeColor": [36, 115, 189], "colorRange": {"colors": ["#EE7733", "#0077BB", "#33BBEE", "#EE3377", "#CC3311", "#009988"], "name": "Tol Vibrant", "type": "qualitative", "category": "ColorBlind"}, "strokeColorRange": {"name": "Global Warming", "type": "sequential", "category": "Uber", "colors": ["#4C0035", "#880030", "#B72F15", "#D6610A", "#EF9100", "#FFC300"]}, "radius": 0, "sizeRange": [0, 10], "radiusRange": [0, 50], "heightRange": [0, 500], "elevationScale": 5, "stroked": False, "filled": True, "enable3d": False, "wireframe": False, "fixedHeight": False}, "hidden": False, "textLabel": [{"field": None, "color": [255, 255, 255], "size": 18, "offset": [0, 0], "anchor": "start", "alignment": "center", "outlineWidth": 0, "outlineColor": [255, 0, 0, 255], "background": False, "backgroundColor": [0, 0, 200, 255]}]}, "visualChannels": {"colorField": {"name": "amenity", "type": "string"}, "colorScale": "ordinal", "strokeColorField": None, "strokeColorScale": "quantile", "sizeField": None, "sizeScale": "linear", "heightField": None, "heightScale": "linear", "radiusField": None, "radiusScale": "linear"}}, {"id": "2hrwpmd", "type": "geojson", "config": {"dataId": "-kgmb4t", "columnMode": "geojson", "label": "beijing_metro", "color": [87, 57, 33], "highlightColor": [252, 242, 26, 255], "columns": {"geojson": "_geojson"}, "isVisible": True, "visConfig": {"opacity": 0.8, "strokeOpacity": 0.8, "thickness": 8.9, "strokeColor": [253, 236, 0], "colorRange": {"name": "Global Warming", "type": "sequential", "category": "Uber", "colors": ["#4C0035", "#880030", "#B72F15", "#D6610A", "#EF9100", "#FFC300"]}, "strokeColorRange": {"name": "Global Warming", "type": "sequential", "category": "Uber", "colors": ["#4C0035", "#880030", "#B72F15", "#D6610A", "#EF9100", "#FFC300"]}, "radius": 10, "sizeRange": [0, 10], "radiusRange": [0, 50], "heightRange": [0, 500], "elevationScale": 0, "stroked": True, "filled": True, "enable3d": False, "wireframe": False, "fixedHeight": False}, "hidden": False, "textLabel": [{"field": None, "color": [255, 255, 255], "size": 18, "offset": [0, 0], "anchor": "start", "alignment": "center", "outlineWidth": 0, "outlineColor": [255, 0, 0, 255], "background": False, "backgroundColor": [0, 0, 200, 255]}]}, "visualChannels": {"colorField": None, "colorScale": "quantile", "strokeColorField": None, "strokeColorScale": "quantile", "sizeField": None, "sizeScale": "linear", "heightField": None, "heightScale": "linear", "radiusField": None, "radiusScale": "linear"}}, {"id": "ju8rai", "type": "geojson", "config": {"dataId": "-42kwdt", "columnMode": "geojson", "label": "precios_clean", "color": [130, 154, 227], "highlightColor": [252, 242, 26, 255], "columns": {"geojson": "geometry"}, "isVisible": True, "visConfig": {"opacity": 0.8, "strokeOpacity": 0.8, "thickness": 3.4, "strokeColor": None, "colorRange": {"colors": ["#F7F4F9", "#DCC9E2", "#D08AC2", "#E33890", "#B70B4F", "#67001F"], "name": "PuRd", "type": "sequential", "category": "ColorBrewer"}, "strokeColorRange": {"name": "Global Warming", "type": "sequential", "category": "Uber", "colors": ["#4C0035", "#880030", "#B72F15", "#D6610A", "#EF9100", "#FFC300"]}, "radius": 13.7, "sizeRange": [0, 10], "radiusRange": [0, 50], "heightRange": [0, 500], "elevationScale": 5, "stroked": False, "filled": True, "enable3d": False, "wireframe": False, "fixedHeight": False}, "hidden": False, "textLabel": [{"field": None, "color": [255, 255, 255], "size": 18, "offset": [0, 0], "anchor": "start", "alignment": "center", "outlineWidth": 0, "outlineColor": [255, 0, 0, 255], "background": False, "backgroundColor": [0, 0, 200, 255]}]}, "visualChannels": {"colorField": {"name": "price", "type": "integer"}, "colorScale": "quantize", "strokeColorField": None, "strokeColorScale": "quantile", "sizeField": None, "sizeScale": "linear", "heightField": None, "heightScale": "linear", "radiusField": None, "radiusScale": "linear"}}],
+            "effects": [],
+            "interactionConfig": {"tooltip": {"fieldsToShow": {"-42kwdt": [{"name": "Lng", "format": None}, {"name": "Lat", "format": None}], "-kgmb4t": [{"name": "@id", "format": None}, {"name": "area", "format": None}, {"name": "indoor", "format": None}, {"name": "layer", "format": None}, {"name": "level", "format": None}], "ecbukq": [{"name": "@id", "format": None}, {"name": "amenity", "format": None}, {"name": "name", "format": None}, {"name": "name:zh", "format": None}, {"name": "name:zh-Hans", "format": None}]}, "compareMode": False, "compareType": "absolute", "enabled": False}, "brush": {"size": 0.5, "enabled": False}, "geocoder": {"enabled": False}, "coordinate": {"enabled": False}},
+            "layerBlending": "normal",
+            "overlayBlending": "normal",
+            "splitMaps": [],
+            "animationConfig": {"currentTime": None, "speed": 1},
+            "editor": {"features": [], "visible": True}
+        },
+        "mapState": {"bearing": 0, "dragRotate": False, "latitude": 39.9202537668648, "longitude": 116.46523604216263, "pitch": 0, "zoom": 11.633599467505832, "isSplit": False, "isViewportSynced": True, "isZoomLocked": False, "splitMapViewports": []},
+        "mapStyle": {"styleType": "satellite", "topLayerGroups": {}, "visibleLayerGroups": {"label": True, "road": True, "border": True, "building": True, "water": True, "land": True, "3d building": False}, "threeDBuildingColor": [4.179000818945631, 7.370237807958659, 14.816457448989057], "backgroundColor": [0, 0, 0], "mapStyles": {}},
+        "uiState": {"mapControls": {"mapLegend": {"active": True, "settings": {"position": {"x": 35, "anchorX": "right", "y": 66, "anchorY": "bottom"}, "contentHeight": 351.8125}}}}}
+}
+
+# Inicializa KeplerGl con la configuración
+kepler_map = KeplerGl(height=600, config=config_mapa)
+
+# Agrega los datos al mapa (asegúrate de que tus DataFrames coincidan con los dataId en la configuración)
+# Ejemplo:
+# kepler_map.add_data(data=tu_dataframe_servicios, name='ecbukq')
+# kepler_map.add_data(data=tu_dataframe_metro, name='-kgmb4t')
+# kepler_map.add_data(data=tu_dataframe_precios, name='-42kwdt')
 
 # Muestra el mapa en Streamlit
 keplergl_static(kepler_map)
