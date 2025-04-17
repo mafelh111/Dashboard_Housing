@@ -1,1 +1,2 @@
 precios_clean.csv filter=lfs diff=lfs merge=lfs -text
+kepler.gl.html filter=lfs diff=lfs merge=lfs -text
