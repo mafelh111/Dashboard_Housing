@@ -3,70 +3,82 @@ import plotly.express as px
 import streamlit as st
 from keplergl import KeplerGl
 from streamlit_keplergl import keplergl_static
+import geopandas as gpd
 
-# Carga de datos (mismo código que antes)
-migracion = pd.read_csv('Migración.csv', sep=',', skiprows=3)
-migracion = migracion[migracion['Country Name'] == 'China']
-migracion = migracion.drop(columns=['Country Name', 'Indicator Name', 'Indicator Code'])
-migracion = migracion.T
-migracion.columns = migracion.iloc[0]
-migracion = migracion[1:]
-migracion = migracion.dropna()
-migracion = migracion.rename(columns={'CHN': 'Net Migration'})
-migracion = migracion.rename_axis('Year').reset_index()
-migracion = migracion.reset_index(drop=True)
-migracion['Year'] = migracion['Year'].astype(int)
-migracion = migracion[migracion['Year'] >= 1990]
+# --- Carga de datos ---
+@st.cache_data
+def load_migracion_data():
+    migracion = pd.read_csv('Migración.csv', sep=',', skiprows=3)
+    migracion = migracion[migracion['Country Name'] == 'China']
+    migracion = migracion.drop(columns=['Country Name', 'Indicator Name', 'Indicator Code'])
+    migracion = migracion.T
+    migracion.columns = migracion.iloc[0]
+    migracion = migracion[1:]
+    migracion = migracion.dropna()
+    migracion = migracion.rename(columns={'CHN': 'Net Migration'})
+    migracion = migracion.rename_axis('Year').reset_index()
+    migracion = migracion.reset_index(drop=True)
+    migracion['Year'] = migracion['Year'].astype(int)
+    migracion = migracion[migracion['Year'] >= 1990]
+    return migracion
 
-crecimiento = pd.read_csv('Crecimiento_urbano.csv', sep=',')
-crecimiento = crecimiento.T
-crecimiento = crecimiento.reset_index()
-crecimiento.columns = crecimiento.iloc[3]
-crecimiento = crecimiento[4:]
-crecimiento = crecimiento.rename(columns={'CHN': 'Tasa_crecimiento', 'Country Code': 'Año'})
-crecimiento = crecimiento.dropna(axis=1, how='any')
-crecimiento['Año'] = crecimiento['Año'].str.extract('(\d+)').astype(int)
+@st.cache_data
+def load_crecimiento_data():
+    crecimiento = pd.read_csv('Crecimiento_urbano.csv', sep=',')
+    crecimiento = crecimiento.T
+    crecimiento = crecimiento.reset_index()
+    crecimiento.columns = crecimiento.iloc[3]
+    crecimiento = crecimiento[4:]
+    crecimiento = crecimiento.rename(columns={'CHN': 'Tasa_crecimiento', 'Country Code': 'Año'})
+    crecimiento = crecimiento.dropna(axis=1, how='any')
+    crecimiento['Año'] = crecimiento['Año'].str.extract('(\d+)').astype(int)
+    return crecimiento
 
-pib = pd.read_csv('Gdp.csv', sep=',', skiprows=3)
-pib = pib[pib['Country Name'] == 'China']
-pib = pib.drop(columns=['Country Name', 'Indicator Name', 'Indicator Code'])
-pib = pib.T
-pib = pib.reset_index()
-pib.columns = pib.iloc[0]
-pib = pib[1:]
-pib.columns = ['Año', 'Tasa PIB']
-pib = pib.dropna()
-pib['Año'] = pib['Año'].astype(int)
-pib = pib[pib['Año'] >= 1990]
-pib['Tasa PIB'] = pib['Tasa PIB'].astype(float)
-pib = pib.reset_index(drop=True)
+@st.cache_data
+def load_pib_data():
+    pib = pd.read_csv('Gdp.csv', sep=',', skiprows=3)
+    pib = pib[pib['Country Name'] == 'China']
+    pib = pib.drop(columns=['Country Name', 'Indicator Name', 'Indicator Code'])
+    pib = pib.T
+    pib = pib.reset_index()
+    pib.columns = pib.iloc[0]
+    pib = pib[1:]
+    pib.columns = ['Año', 'Tasa PIB']
+    pib = pib.dropna()
+    pib['Año'] = pib['Año'].astype(int)
+    pib = pib[pib['Año'] >= 1990]
+    pib['Tasa PIB'] = pib['Tasa PIB'].astype(float)
+    pib = pib.reset_index(drop=True)
+    return pib
 
-# Creación de gráficos
-def update_fig_layout(fig, y_title):
-    fig.update_traces(mode='lines+markers', marker=dict(size=10, line=dict(width=2, color='DarkSlateGrey')))
-    fig.update_layout(xaxis_title='Año', yaxis_title=y_title)
-    return fig
+@st.cache_data
+def load_composicion_data():
+    data = pd.read_csv("composicion.csv")
+    composicion = pd.DataFrame(data)
+    composicion = composicion.dropna(subset=['Ciudad Entera', 'Viviendas Urbanas', 'Viviendas rurales'])
+    return composicion
 
-fig_migracion = update_fig_layout(px.line(migracion, x='Year', y='Net Migration', title='Migración neta de China'), 'Migración neta')
-fig_crecimiento = update_fig_layout(px.line(crecimiento, x='Año', y='Tasa_crecimiento', title='Crecimiento urbano de China'), 'Tasa de crecimiento urbano(%)')
-fig_pib = update_fig_layout(px.line(pib, x='Año', y='Tasa PIB', title='Tasa de crecimiento del PIB de China'), 'Tasa PIB(%)')
+@st.cache_data
+def load_geojson_data(file_path):
+    try:
+        gdf = gpd.read_file(file_path)
+        if 'geometry' in gdf.columns and '_geojson' not in gdf.columns:
+            gdf = gdf.rename(columns={'geometry': '_geojson'})
+        return gdf
+    except FileNotFoundError:
+        st.error(f"No se encontró el archivo: {file_path}")
+        return None
 
-# Diseño del Dashboard
-st.title('Análisis Contextual del Mercado Inmobiliario de Pekín')
+migracion = load_migracion_data()
+crecimiento = load_crecimiento_data()
+pib = load_pib_data()
+composicion = load_composicion_data()
 
-# Usando columnas para mejor distribución
-col1, col2 = st.columns(2)
+beijing_services_df = load_geojson_data('beijing_services.geojson')
+beijing_metro_df = load_geojson_data('beijing_metro.geojson')
+precios_clean_df = load_geojson_data('precios_clean.geojson')
 
-with col1:
-    st.plotly_chart(fig_migracion)
-with col2:
-    st.plotly_chart(fig_crecimiento)
-
-st.plotly_chart(fig_pib)
-
-st.markdown("### Mapa Interactivo: Servicios Urbanos y Transporte en Pekín")
-
-# Configuración del mapa directamente desde el JSON
+# --- Configuración del mapa de Kepler.gl ---
 config_mapa = {
     "version": "v1",
     "config": {
@@ -86,24 +98,94 @@ config_mapa = {
         "uiState": {"mapControls": {"mapLegend": {"active": True, "settings": {"position": {"x": 35, "anchorX": "right", "y": 66, "anchorY": "bottom"}, "contentHeight": 351.8125}}}}}
 }
 
-# Inicializa KeplerGl con la configuración
-kepler_map = KeplerGl(height=600, config=config_mapa)
+# --- Creación de gráficos ---
+def update_fig_layout(fig, y_title):
+    fig.update_traces(mode='lines+markers', marker=dict(size=10, line=dict(width=2, color='DarkSlateGrey')))
+    fig.update_layout(xaxis_title='Año', yaxis_title=y_title)
+    return fig
 
-# Agrega los datos al mapa (asegúrate de que tus DataFrames coincidan con los dataId en la configuración)
-# Ejemplo:
-# kepler_map.add_data(data=tu_dataframe_servicios, name='ecbukq')
-# kepler_map.add_data(data=tu_dataframe_metro, name='-kgmb4t')
-# kepler_map.add_data(data=tu_dataframe_precios, name='-42kwdt')
+fig_migracion = update_fig_layout(px.line(migracion, x='Year', y='Net Migration', title='Migración neta de China'), 'Migración neta')
+fig_crecimiento = update_fig_layout(px.line(crecimiento, x='Año', y='Tasa_crecimiento', title='Crecimiento urbano de China'), 'Tasa de crecimiento urbano(%)')
+fig_pib = update_fig_layout(px.line(pib, x='Año', y='Tasa PIB', title='Tasa de crecimiento del PIB de China'), 'Tasa PIB(%)')
 
-# Muestra el mapa en Streamlit
-keplergl_static(kepler_map)
+def create_composicion_charts():
+    tipos_de_vivienda = composicion[composicion["Item"].isin([
+        "Viviendas Individuales de Varios Pisos", "Viviendas Individuales de Una Planta",
+        "Apartamento de Cuatro o Más Habitaciones", "Apartamento de Tres Habitaciones",
+        "Apartamento de Dos Habitaciones", "Apartamento de Una Habitación",
+        "Apartamento Tipo Tubo o Agrupado Estrechamente", "Viviendas de Una Planta", "Otros"
+    ])]
+
+    fuentes_de_vivienda = composicion[composicion["Item"].isin([
+        "Viviendas Públicas Alquiladas", "Viviendas Privadas Alquiladas", "Viviendas Autoconstruidas",
+        "Viviendas Comerciales Compradas", "Viviendas Compradas de la Reforma de Vivienda",
+        "Viviendas de Indemnización Compradas", "Viviendas de Reasentamiento", "Viviendas por Herencia o Donación",
+        "Viviendas Prestadas Gratuitamente", "Viviendas Gratuitas Suministradas por Empleadores", "Otros"
+    ])]
+
+    fig1 = px.bar(tipos_de_vivienda,
+                  x="Item",
+                  y=['Ciudad Entera', 'Viviendas Urbanas', 'Viviendas rurales'],
+                  title="Comparación de Tipos de Vivienda",
+                  labels={"Item": "Tipo de Vivienda", "value": "Porcentaje", "variable": "Categoría"},
+                  barmode="group")
+    fig1.update_xaxes(tickangle=45)
+    fig1.update_traces(marker=dict(line=dict(width=0.5, color='black')))
+    fig1.update_layout(width=800, height=600, margin=dict(l=40, r=40, t=40, b=80))
+
+    fig2 = px.bar(fuentes_de_vivienda,
+                  x="Item",
+                  y=['Ciudad Entera', 'Viviendas Urbanas', 'Viviendas rurales'],
+                  title="Comparación de Fuentes de Vivienda",
+                  labels={"Item": "Fuente de Vivienda", "value": "Porcentaje", "variable": "Categoría"},
+                  barmode="group")
+    fig2.update_xaxes(tickangle=45)
+    fig2.update_traces(marker=dict(line=dict(width=0.5, color='black')))
+    fig2.update_layout(width=800, height=600, margin=dict(l=40, r=40, t=40, b=80))
+
+    return fig1, fig2
+
+fig_tipos_vivienda, fig_fuentes_vivienda = create_composicion_charts()
+
+# --- Diseño del Dashboard ---
+st.title('Análisis Contextual del Mercado Inmobiliario de Pekín')
+
+tab1, tab2, tab3, tab4 = st.tabs(["Migración y Crecimiento", "PIB", "Composición de Vivienda", "Mapa"])
+
+with tab1:
+    col1, col2 = st.columns(2)
+    with col1:
+        st.plotly_chart(fig_migracion)
+    with col2:
+        st.plotly_chart(fig_crecimiento)
+
+with tab2:
+    st.plotly_chart(fig_pib)
+
+with tab3:
+    st.plotly_chart(fig_tipos_vivienda)
+    st.plotly_chart(fig_fuentes_vivienda)
+
+with tab4:
+    st.markdown("### Mapa Interactivo: Servicios Urbanos y Transporte en Pekín")
+    kepler_map = KeplerGl(height=600, config=config_mapa)
+
+    # Carga de datos GeoJSON (asegúrate de que los DataFrames estén listos)
+    if beijing_services_df is not None:
+        kepler_map.add_data(data=beijing_services_df, name='ecbukq')
+    if beijing_metro_df is not None:
+        kepler_map.add_data(data=beijing_metro_df, name='-kgmb4t')
+    if precios_clean_df is not None:
+        kepler_map.add_data(data=precios_clean_df, name='-42kwdt')
+
+    keplergl_static(kepler_map)
 
 # Expanders para información adicional (opcional)
-#with st.expander("Información sobre Migración"):
-#    st.write("Datos de migración neta de China desde 1990.")
+# with st.expander("Información sobre Migración"):
+#     st.write("Datos de migración neta de China desde 1990.")
 
-#with st.expander("Información sobre Crecimiento Urbano"):
-#  st.write("Tasa de crecimiento urbano de China.")
+# with st.expander("Información sobre Crecimiento Urbano"):
+#   st.write("Tasa de crecimiento urbano de China.")
 
-#with st.expander("Información sobre el PIB"):
-#  st.write("Tasa de crecimiento del Producto Interno Bruto de China.")
+# with st.expander("Información sobre el PIB"):
+#   st.write("Tasa de crecimiento del Producto Interno Bruto de China.")
