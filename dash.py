@@ -522,14 +522,11 @@ def create_composicion_charts():
     fig2.update_layout(width=800, height=600, margin=dict(l=40, r=40, t=40, b=80))
 
     return fig1, fig2
-
 fig_tipos_vivienda, fig_fuentes_vivienda = create_composicion_charts()
 
 # --- Diseño del Dashboard ---
 st.title('Análisis Contextual del Mercado Inmobiliario de Pekín')
-
 tab1, tab2, tab3, tab4 = st.tabs(["Migración y Crecimiento", "PIB", "Composición de Vivienda", "Mapa"])
-
 with tab1:
     col1, col2 = st.columns(2)
     with col1:
@@ -545,21 +542,21 @@ with tab3:
     st.plotly_chart(fig_fuentes_vivienda)
 
 with tab4:
-    st.markdown("### Mapa Interactivo: Servicios Urbanos y Transporte en Pekín")
+  st.markdown("### Mapa Interactivo: Servicios Urbanos y Transporte en Pekín")
 
     # Inicializar el mapa de Kepler.gl con la configuración
-    kepler_map = KeplerGl(height=600, config=config_mapa)
+  kepler_map = KeplerGl(height=600, config=config_mapa)
 
     # Agregar datos al mapa
-    if beijing_services_gdf is not None:
-        kepler_map.add_data(data=beijing_services_gdf, name='ecbukq')
-    if beijing_metro_gdf is not None:
-        kepler_map.add_data(data=beijing_metro_gdf, name='-kgmb4t')
-    if precios_clean_df is not None:
-        kepler_map.add_data(data=precios_clean_df, name='-42kwdt')
+  if beijing_services_gdf is not None:
+      kepler_map.add_data(data=beijing_services_gdf, name='ecbukq')
+  if beijing_metro_gdf is not None:
+      kepler_map.add_data(data=beijing_metro_gdf, name='-kgmb4t')
+  if precios_clean_df is not None:
+      kepler_map.add_data(data=precios_clean_df, name='-42kwdt')
 
     # Mostrar el mapa en Streamlit
-    keplergl_static(kepler_map)
+  keplergl_static(kepler_map)
 
 # Expanders para información adicional (opcional)
 # with st.expander("Información sobre Migración"):
