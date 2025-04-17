@@ -435,22 +435,21 @@ config_mapa = {
         }
     }
 }
-
 st.markdown("### Mapa Interactivo: Servicios Urbanos y Transporte en Pekín")
 
     # Inicializar el mapa de Kepler.gl con la configuración
-    kepler_map = KeplerGl(height=600, config=config_mapa)
+kepler_map = KeplerGl(height=600, config=config_mapa)
 
     # Agregar datos al mapa
-    if beijing_services_gdf is not None:
-        kepler_map.add_data(data=beijing_services_gdf, name='ecbukq')
-    if beijing_metro_gdf is not None:
-        kepler_map.add_data(data=beijing_metro_gdf, name='-kgmb4t')
-    if precios_clean_df is not None:
-        kepler_map.add_data(data=precios_clean_df, name='-42kwdt')
+if beijing_services_gdf is not None:
+    kepler_map.add_data(data=beijing_services_gdf, name='ecbukq')
+if beijing_metro_gdf is not None:
+     kepler_map.add_data(data=beijing_metro_gdf, name='-kgmb4t')
+if precios_clean_df is not None:
+    kepler_map.add_data(data=precios_clean_df, name='-42kwdt')
 
     # Mostrar el mapa en Streamlit
-    keplergl_static(kepler_map)
+keplergl_static(kepler_map)
 
 # Expanders para información adicional (opcional)
 #with st.expander("Información sobre Migración"):
