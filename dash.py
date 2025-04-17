@@ -9,7 +9,7 @@ import geopandas as gpd
 @st.cache_data
 def load_migracion_data():
     try:
-        migracion = pd.read_csv('Migración.csv', sep=',', skiprows=3, encoding='utf-8', error_bad_lines=False, warn_bad_lines=True)
+        migracion = pd.read_csv('Migración.csv', sep=',', skiprows=3)
         # ... (tu código para procesar migracion) ...
         return migracion
     except Exception as e:
@@ -19,7 +19,7 @@ def load_migracion_data():
 @st.cache_data
 def load_pib_data():
     try:
-        pib = pd.read_csv('Gdp.csv', sep=',', skiprows=3, encoding='utf-8', error_bad_lines=False, warn_bad_lines=True)
+        pib = pd.read_csv('Gdp.csv', sep=',', skiprows=3)
         # ... (tu código para procesar pib) ...
         return pib
     except Exception as e:
