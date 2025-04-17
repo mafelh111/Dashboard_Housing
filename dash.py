@@ -547,7 +547,7 @@ with tab3:
 with tab4:
     st.markdown("### Mapa Interactivo: Servicios Urbanos y Transporte en Pekín")
 
-    components.iframe("kepler.gl.html", height=600, scrolling=True)
+    components.iframe("https://680081747802a286079810a4--aesthetic-creponne-6b4c6c.netlify.app/", height=600, scrolling=True)
 
 # Expanders para información adicional (opcional)
 # with st.expander("Información sobre Migración"):
