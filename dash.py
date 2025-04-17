@@ -59,16 +59,6 @@ def load_composicion_data():
     return composicion
 
 @st.cache_data
-def load_geojson_data(file_path):
-    try:
-        gdf = gpd.read_file(file_path)
-        if 'geometry' in gdf.columns and '_geojson' not in gdf.columns:
-            gdf = gdf.rename(columns={'geometry': '_geojson'})
-        return gdf
-    except FileNotFoundError:
-        st.error(f"No se encontró el archivo: {file_path}")
-        return None
-@st.cache_data
 def load_data(file_path):
     try:
         if file_path.endswith('.geojson') or file_path.endswith('.json'):
@@ -88,6 +78,16 @@ def load_data(file_path):
     except Exception as e:
         st.error(f"Error al cargar el archivo {file_path}: {e}")
         return None
+
+migracion = load_migracion_data()
+crecimiento = load_crecimiento_data()
+pib = load_pib_data()
+composicion = load_composicion_data()
+
+beijing_services_df = load_data('beijing_services.geojson')
+beijing_metro_df = load_data('beijing_metro.geojson')
+precios_clean_df = load_data('precios_clean.csv')
+
 migracion = load_migracion_data()
 crecimiento = load_crecimiento_data()
 pib = load_pib_data()
@@ -187,6 +187,13 @@ with tab3:
 
 with tab4:
     st.markdown("### Mapa Interactivo: Servicios Urbanos y Transporte en Pekín")
+
+    # Imprimir versiones de las bibliotecas (para depuración)
+    st.write("Versión de geopandas:", geopandas.__version__)
+    st.write("Versión de keplergl:", keplergl.__version__)
+    st.write("Versión de streamlit_keplergl:", streamlit_keplergl.__version__)
+    st.write("Versión de streamlit:", st.__version__)
+
     kepler_map = KeplerGl(height=600, config=config_mapa)
 
     # Carga de datos GeoJSON (asegúrate de que los DataFrames estén listos)
@@ -198,10 +205,6 @@ with tab4:
         kepler_map.add_data(data=precios_clean_df, name='-42kwdt')
 
     keplergl_static(kepler_map)
-st.write("Versión de geopandas:", geopandas.__version__)
-st.write("Versión de keplergl:", keplergl.__version__)
-st.write("Versión de streamlit_keplergl:", streamlit_keplergl.__version__)
-st.write("Versión de streamlit:", st.__version__)
 # Expanders para información adicional (opcional)
 # with st.expander("Información sobre Migración"):
 #     st.write("Datos de migración neta de China desde 1990.")
