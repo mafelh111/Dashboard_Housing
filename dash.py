@@ -25,10 +25,29 @@ def load_pib_data():
     except Exception as e:
         st.error(f"Error al cargar Gdp.csv: {e}")
         return None
+# --- Carga de datos ---
+@st.cache_data
+def load_data(file_path):
+    try:
+        if file_path.endswith('.geojson') or file_path.endswith('.json'):
+            gdf = gpd.read_file(file_path)
+            return gdf
+        elif file_path.endswith('.csv'):
+            df = pd.read_csv(file_path)
+            return df
+        else:
+            st.error(f"Formato de archivo no soportado: {file_path}")
+            return None
+    except FileNotFoundError:
+        st.error(f"No se encontró el archivo: {file_path}")
+        return None
+    except Exception as e:
+        st.error(f"Error al cargar el archivo {file_path}: {e}")
+        return None
 
-migracion = load_data('Migración.csv')
+migracion = load_migracion_data('Migración.csv')
 crecimiento = load_data('Crecimiento_urbano.csv')
-pib = load_data('Gdp.csv')
+pib = load_pib_data('Gdp.csv')
 composicion = load_data('composicion.csv')
 
 beijing_services_gdf = load_data('beijing_services.geojson')
