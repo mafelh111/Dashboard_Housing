@@ -28,7 +28,7 @@ def cargar_datos():
     with open("metro.geojson", "r", encoding="utf-8") as f:
         metro = json.load(f)
 
-    precios = pd.read_csv("precios.csv")
+    precios = pd.read_csv("precios_clean.csv")
 
     return migracion, crecimiento_urbano, pib, composicion_urbana, servicios, metro, precios
 
