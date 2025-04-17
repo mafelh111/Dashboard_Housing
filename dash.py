@@ -198,7 +198,10 @@ with tab4:
         kepler_map.add_data(data=precios_clean_df, name='-42kwdt')
 
     keplergl_static(kepler_map)
-
+st.write("Versión de geopandas:", geopandas.__version__)
+st.write("Versión de keplergl:", keplergl.__version__)
+st.write("Versión de streamlit_keplergl:", streamlit_keplergl.__version__)
+st.write("Versión de streamlit:", st.__version__)
 # Expanders para información adicional (opcional)
 # with st.expander("Información sobre Migración"):
 #     st.write("Datos de migración neta de China desde 1990.")
