@@ -68,7 +68,26 @@ def load_geojson_data(file_path):
     except FileNotFoundError:
         st.error(f"No se encontró el archivo: {file_path}")
         return None
-
+@st.cache_data
+def load_data(file_path):
+    try:
+        if file_path.endswith('.geojson') or file_path.endswith('.json'):
+            gdf = gpd.read_file(file_path)
+            if 'geometry' in gdf.columns and '_geojson' not in gdf.columns:
+                gdf = gdf.rename(columns={'geometry': '_geojson'})
+            return gdf
+        elif file_path.endswith('.csv'):
+            df = pd.read_csv(file_path)
+            return df
+        else:
+            st.error(f"Formato de archivo no soportado: {file_path}")
+            return None
+    except FileNotFoundError:
+        st.error(f"No se encontró el archivo: {file_path}")
+        return None
+    except Exception as e:
+        st.error(f"Error al cargar el archivo {file_path}: {e}")
+        return None
 migracion = load_migracion_data()
 crecimiento = load_crecimiento_data()
 pib = load_pib_data()
@@ -76,7 +95,7 @@ composicion = load_composicion_data()
 
 beijing_services_df = load_geojson_data('beijing_services.geojson')
 beijing_metro_df = load_geojson_data('beijing_metro.geojson')
-precios_clean_df = load_geojson_data('precios_clean.geojson')
+precios_clean_df = load_data('precios_clean.csv')
 
 # --- Configuración del mapa de Kepler.gl ---
 config_mapa = {
