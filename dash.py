@@ -2,6 +2,8 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 import streamlit.components.v1 as components
+from keplergl import KeplerGl
+from streamlit_keplergl import keplergl_static
 
 # Carga de datos (mismo código que antes)
 migracion = pd.read_csv('Migración.csv', sep=',', skiprows=3)
@@ -65,14 +67,18 @@ st.plotly_chart(fig_pib)
 
 st.markdown("### Mapa Interactivo: Servicios Urbanos y Transporte en Pekín")
 
-components.iframe("kepler.gl.html", height=600, scrolling=True)
+# Genera el mapa de Kepler.gl (reemplaza esto con tu configuración)
+kepler_map = KeplerGl(height=600)  # Puedes personalizar la altura y otros parámetros
+
+# Muestra el mapa en Streamlit
+keplergl_static(kepler_map)
 
 # Expanders para información adicional (opcional)
 #with st.expander("Información sobre Migración"):
 #    st.write("Datos de migración neta de China desde 1990.")
 
 #with st.expander("Información sobre Crecimiento Urbano"):
-#   st.write("Tasa de crecimiento urbano de China.")
+#  st.write("Tasa de crecimiento urbano de China.")
 
 #with st.expander("Información sobre el PIB"):
-#   st.write("Tasa de crecimiento del Producto Interno Bruto de China.")
+#  st.write("Tasa de crecimiento del Producto Interno Bruto de China.")
