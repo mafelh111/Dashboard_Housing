@@ -1,11 +1,110 @@
 import pandas as pd
-import plotly.express as px
-import streamlit as st
-from keplergl import KeplerGl
-from streamlit_keplergl import keplergl_static
-import geopandas as gpd
 
-# --- Carga de datos ---
+import plotly.express as px
+
+import streamlit as st
+
+import streamlit.components.v1 as components
+
+from keplergl import KeplerGl
+
+from streamlit_keplergl import keplergl_static
+
+
+
+# Carga de datos (mismo código que antes)
+
+migracion = pd.read_csv('Migración.csv', sep=',', skiprows=3)
+
+migracion = migracion[migracion['Country Name'] == 'China']
+
+migracion = migracion.drop(columns=['Country Name', 'Indicator Name', 'Indicator Code'])
+
+migracion = migracion.T
+
+migracion.columns = migracion.iloc[0]
+
+migracion = migracion[1:]
+
+migracion = migracion.dropna()
+
+migracion = migracion.rename(columns={'CHN': 'Net Migration'})
+
+migracion = migracion.rename_axis('Year').reset_index()
+
+migracion = migracion.reset_index(drop=True)
+
+migracion['Year'] = migracion['Year'].astype(int)
+
+migracion = migracion[migracion['Year'] >= 1990]
+
+
+
+crecimiento = pd.read_csv('Crecimiento_urbano.csv', sep=',')
+
+crecimiento = crecimiento.T
+
+crecimiento = crecimiento.reset_index()
+
+crecimiento.columns = crecimiento.iloc[3]
+
+crecimiento = crecimiento[4:]
+
+crecimiento = crecimiento.rename(columns={'CHN': 'Tasa_crecimiento', 'Country Code': 'Año'})
+
+crecimiento = crecimiento.dropna(axis=1, how='any')
+
+crecimiento['Año'] = crecimiento['Año'].str.extract('(\d+)').astype(int)
+
+
+
+pib = pd.read_csv('Gdp.csv', sep=',', skiprows=3)
+
+pib = pib[pib['Country Name'] == 'China']
+
+pib = pib.drop(columns=['Country Name', 'Indicator Name', 'Indicator Code'])
+
+pib = pib.T
+
+pib = pib.reset_index()
+
+pib.columns = pib.iloc[0]
+
+pib = pib[1:]
+
+pib.columns = ['Año', 'Tasa PIB']
+
+pib = pib.dropna()
+
+pib['Año'] = pib['Año'].astype(int)
+
+pib = pib[pib['Año'] >= 1990]
+
+pib['Tasa PIB'] = pib['Tasa PIB'].astype(float)
+
+pib = pib.reset_index(drop=True)
+
+
+
+# Creación de gráficos (mismo código que antes)
+
+def update_fig_layout(fig, y_title):
+
+  fig.update_traces(mode='lines+markers', marker=dict(size=10, line=dict(width=2, color='DarkSlateGrey')))
+
+  fig.update_layout(xaxis_title='Año', yaxis_title=y_title)
+
+  return fig
+
+
+
+fig_migracion = update_fig_layout(px.line(migracion, x='Year', y='Net Migration', title='Migración neta de China'), 'Migración neta')
+
+fig_crecimiento = update_fig_layout(px.line(crecimiento, x='Año', y='Tasa_crecimiento', title='Crecimiento urbano de China'), 'Tasa de crecimiento urbano(%)')
+
+fig_pib = update_fig_layout(px.line(pib, x='Año', y='Tasa PIB', title='Tasa de crecimiento del PIB de China'), 'Tasa PIB(%)')
+
+
 @st.cache_data
 def load_data(file_path):
     try:
@@ -24,16 +123,10 @@ def load_data(file_path):
     except Exception as e:
         st.error(f"Error al cargar el archivo {file_path}: {e}")
         return None
-
-migracion = load_data('Migración.csv')
-crecimiento = load_data('Crecimiento_urbano.csv')
-pib = load_data('Gdp.csv')
-composicion = load_data('composicion.csv')
-
 beijing_metro_gdf = load_data('beijing_metro.geojson')
 beijing_services_gdf = load_data('beijing_services.geojson')
 precios_clean_df = load_data('precios_clean.csv')
-
+composicion = load_data('composicion.csv')
 # --- Configuración del mapa de Kepler.gl ---
 config_mapa = {
     "version": "v1",
@@ -382,7 +475,6 @@ config_mapa = {
         }
     }
 }
-
 # --- Creación de gráficos ---
 def update_fig_layout(fig, y_title):
     fig.update_traces(mode='lines+markers', marker=dict(size=10, line=dict(width=2, color='DarkSlateGrey')))
