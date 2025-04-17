@@ -1,7 +1,5 @@
-streamlit
 plotly
-pandas
-numpy
-streamlit-keplergl
+streamlit
 keplergl
-components
+streamlit-keplergl
+geopandas
