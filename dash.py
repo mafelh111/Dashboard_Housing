@@ -545,7 +545,6 @@ with tab3:
     st.plotly_chart(fig_fuentes_vivienda)
 
 with tab4:
-    with tab4:
     st.markdown("### Mapa Interactivo: Servicios Urbanos y Transporte en Pekín")
 
     components.iframe("kepler.gl.html", height=600, scrolling=True)
