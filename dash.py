@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import streamlit.components.v1 as components
 
 # Carga de datos (mismo código que antes)
 migracion = pd.read_csv('Migración.csv', sep=',', skiprows=3)
@@ -50,7 +51,7 @@ fig_crecimiento = update_fig_layout(px.line(crecimiento, x='Año', y='Tasa_creci
 fig_pib = update_fig_layout(px.line(pib, x='Año', y='Tasa PIB', title='Tasa de crecimiento del PIB de China'), 'Tasa PIB(%)')
 
 # Diseño del Dashboard
-st.title('Tablero de Indicadores de China')
+st.title('Análisis Contextual del Mercado Inmobiliario de Pekín')
 
 # Usando columnas para mejor distribución
 col1, col2 = st.columns(2)
@@ -61,6 +62,10 @@ with col2:
     st.plotly_chart(fig_crecimiento)
 
 st.plotly_chart(fig_pib)
+
+st.markdown("### Mapa Interactivo: Servicios Urbanos y Transporte en Pekín")
+
+components.iframe("kepler.gl.html", height=600, scrolling=True)
 
 # Expanders para información adicional (opcional)
 #with st.expander("Información sobre Migración"):
