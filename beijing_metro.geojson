@@ -1,0 +1,2462 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-04-16T22:37:38Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/16470024",
+        "area": "yes",
+        "indoor": "room",
+        "layer": "-2",
+        "level": "-2",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "type": "multipolygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3924994,
+              39.8987953
+            ],
+            [
+              116.3908544,
+              39.8987479
+            ],
+            [
+              116.3908586,
+              39.8986874
+            ],
+            [
+              116.3925015,
+              39.8987355
+            ],
+            [
+              116.3924994,
+              39.8987953
+            ]
+          ],
+          [
+            [
+              116.3917292,
+              39.8987525
+            ],
+            [
+              116.3917302,
+              39.8987318
+            ],
+            [
+              116.3916023,
+              39.8987281
+            ],
+            [
+              116.3916018,
+              39.8987378
+            ],
+            [
+              116.3916013,
+              39.8987488
+            ],
+            [
+              116.3917292,
+              39.8987525
+            ]
+          ]
+        ]
+      },
+      "id": "relation/16470024"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/16470270",
+        "area": "yes",
+        "indoor": "room",
+        "layer": "-1",
+        "level": "-4",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "type": "multipolygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3942611,
+              39.8979023
+            ],
+            [
+              116.3931668,
+              39.8972078
+            ],
+            [
+              116.3932814,
+              39.8971016
+            ],
+            [
+              116.3943757,
+              39.8977961
+            ],
+            [
+              116.3942611,
+              39.8979023
+            ]
+          ]
+        ]
+      },
+      "id": "relation/16470270"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/16475430",
+        "area": "yes",
+        "layer": "-2",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "type": "multipolygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4045271,
+              39.9234427
+            ],
+            [
+              116.4045289,
+              39.9225557
+            ],
+            [
+              116.404555,
+              39.9225549
+            ],
+            [
+              116.404555,
+              39.9231169
+            ],
+            [
+              116.4045787,
+              39.9231151
+            ],
+            [
+              116.4045819,
+              39.9229546
+            ],
+            [
+              116.4046092,
+              39.9229549
+            ],
+            [
+              116.4046074,
+              39.9238419
+            ],
+            [
+              116.4045843,
+              39.9238419
+            ],
+            [
+              116.4045803,
+              39.9233961
+            ],
+            [
+              116.4045511,
+              39.9233961
+            ],
+            [
+              116.4045511,
+              39.9234428
+            ],
+            [
+              116.4045271,
+              39.9234427
+            ]
+          ],
+          [
+            [
+              116.4045535,
+              39.9233265
+            ],
+            [
+              116.4045748,
+              39.9233265
+            ],
+            [
+              116.4045764,
+              39.9231484
+            ],
+            [
+              116.4045527,
+              39.923149
+            ],
+            [
+              116.4045535,
+              39.9233265
+            ]
+          ]
+        ]
+      },
+      "id": "relation/16475430"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/120628848",
+        "area": "yes",
+        "layer": "-4",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3869169,
+              39.9999572
+            ],
+            [
+              116.3867509,
+              39.9999528
+            ],
+            [
+              116.3868077,
+              39.9986944
+            ],
+            [
+              116.3869736,
+              39.9986988
+            ],
+            [
+              116.3869169,
+              39.9999572
+            ]
+          ]
+        ]
+      },
+      "id": "way/120628848"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/120628850",
+        "area": "yes",
+        "layer": "-4",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3864611,
+              40.0098304
+            ],
+            [
+              116.3862951,
+              40.009826
+            ],
+            [
+              116.386352,
+              40.0085677
+            ],
+            [
+              116.386518,
+              40.0085721
+            ],
+            [
+              116.3864611,
+              40.0098304
+            ]
+          ]
+        ]
+      },
+      "id": "way/120628850"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/121231311",
+        "area": "yes",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4110516,
+              40.0019568
+            ],
+            [
+              116.4110984,
+              40.0019615
+            ],
+            [
+              116.4109214,
+              40.0030161
+            ],
+            [
+              116.4108823,
+              40.0030123
+            ],
+            [
+              116.4110516,
+              40.0019568
+            ]
+          ]
+        ]
+      },
+      "id": "way/121231311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/121231315",
+        "area": "yes",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4110495,
+              40.003028
+            ],
+            [
+              116.4110031,
+              40.0030233
+            ],
+            [
+              116.4111871,
+              40.0019746
+            ],
+            [
+              116.4112333,
+              40.0019793
+            ],
+            [
+              116.4110495,
+              40.003028
+            ]
+          ]
+        ]
+      },
+      "id": "way/121231315"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/121231327",
+        "area": "yes",
+        "name": "立水桥南",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4080543,
+              40.0410521
+            ],
+            [
+              116.4078859,
+              40.040997
+            ],
+            [
+              116.4080267,
+              40.0407307
+            ],
+            [
+              116.4082799,
+              40.040285
+            ],
+            [
+              116.4084844,
+              40.0399251
+            ],
+            [
+              116.4086528,
+              40.0399802
+            ],
+            [
+              116.4084511,
+              40.0403414
+            ],
+            [
+              116.4080543,
+              40.0410521
+            ]
+          ]
+        ]
+      },
+      "id": "way/121231327"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/121241949",
+        "area": "yes",
+        "layer": "-4",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4109285,
+              39.9400335
+            ],
+            [
+              116.4108102,
+              39.9400311
+            ],
+            [
+              116.4108538,
+              39.9387739
+            ],
+            [
+              116.4109718,
+              39.9387763
+            ],
+            [
+              116.4109285,
+              39.9400335
+            ]
+          ]
+        ]
+      },
+      "id": "way/121241949"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/152589310",
+        "note": "施工区域",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4188351,
+              39.8446894
+            ],
+            [
+              116.4193288,
+              39.8446622
+            ],
+            [
+              116.4199541,
+              39.8445961
+            ],
+            [
+              116.4205039,
+              39.8445339
+            ],
+            [
+              116.4205023,
+              39.8449463
+            ],
+            [
+              116.4198984,
+              39.8448702
+            ],
+            [
+              116.4192706,
+              39.8449071
+            ],
+            [
+              116.4188301,
+              39.8449129
+            ],
+            [
+              116.4188351,
+              39.8446894
+            ]
+          ]
+        ]
+      },
+      "id": "way/152589310"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/164946982",
+        "note": "old M5 site zone",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4229965,
+              39.8442838
+            ],
+            [
+              116.4229956,
+              39.8444775
+            ],
+            [
+              116.4210091,
+              39.844472
+            ],
+            [
+              116.42101,
+              39.8442782
+            ],
+            [
+              116.4229965,
+              39.8442838
+            ]
+          ]
+        ]
+      },
+      "id": "way/164946982"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/330398334",
+        "area": "yes",
+        "layer": "-3",
+        "level": "-2",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "tunnel": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.475081,
+              39.9833969
+            ],
+            [
+              116.4756323,
+              39.9830347
+            ],
+            [
+              116.4759333,
+              39.982837
+            ],
+            [
+              116.4760002,
+              39.9828968
+            ],
+            [
+              116.4757486,
+              39.9830621
+            ],
+            [
+              116.4754234,
+              39.9832758
+            ],
+            [
+              116.4752475,
+              39.9833914
+            ],
+            [
+              116.4750169,
+              39.9835429
+            ],
+            [
+              116.4748424,
+              39.9836575
+            ],
+            [
+              116.4747754,
+              39.9835977
+            ],
+            [
+              116.475081,
+              39.9833969
+            ]
+          ]
+        ]
+      },
+      "id": "way/330398334"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/330398335",
+        "area": "yes",
+        "layer": "-3",
+        "level": "-2",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "tunnel": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4761519,
+              39.9830323
+            ],
+            [
+              116.4756461,
+              39.9833646
+            ],
+            [
+              116.4756265,
+              39.9833471
+            ],
+            [
+              116.4752797,
+              39.983575
+            ],
+            [
+              116.4752993,
+              39.9835925
+            ],
+            [
+              116.4749941,
+              39.983793
+            ],
+            [
+              116.4749294,
+              39.9837352
+            ],
+            [
+              116.4751072,
+              39.9836183
+            ],
+            [
+              116.4752549,
+              39.9835214
+            ],
+            [
+              116.4754118,
+              39.9834182
+            ],
+            [
+              116.4754991,
+              39.9833609
+            ],
+            [
+              116.4755873,
+              39.983303
+            ],
+            [
+              116.4758365,
+              39.9831392
+            ],
+            [
+              116.4760872,
+              39.9829745
+            ],
+            [
+              116.4761519,
+              39.9830323
+            ]
+          ]
+        ]
+      },
+      "id": "way/330398335"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/475064881",
+        "level": "-2",
+        "name": "东直门",
+        "name:en": "DongZhiMen",
+        "name:zh": "东直门",
+        "name:zh-Hans": "东直门",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4283225,
+              39.942096
+            ],
+            [
+              116.4289464,
+              39.9410825
+            ],
+            [
+              116.4290047,
+              39.9411036
+            ],
+            [
+              116.4286421,
+              39.9416926
+            ],
+            [
+              116.4283807,
+              39.9421171
+            ],
+            [
+              116.4283225,
+              39.942096
+            ]
+          ]
+        ]
+      },
+      "id": "way/475064881"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/475064882",
+        "level": "-2",
+        "name": "东直门",
+        "name:en": "DongZhiMen",
+        "name:zh": "东直门",
+        "name:zh-Hans": "东直门",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4282237,
+              39.9420604
+            ],
+            [
+              116.428843,
+              39.9410469
+            ],
+            [
+              116.4289094,
+              39.9410711
+            ],
+            [
+              116.4285712,
+              39.9416238
+            ],
+            [
+              116.4282902,
+              39.9420829
+            ],
+            [
+              116.4282237,
+              39.9420604
+            ]
+          ]
+        ]
+      },
+      "id": "way/475064882"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/672449120",
+        "area": "yes",
+        "layer": "-4",
+        "location": "underground",
+        "name": "首经贸",
+        "name:en": "Shoujingmao",
+        "name:zh": "首经贸",
+        "name:zh-Hans": "首经贸",
+        "name:zh-Hant": "首經貿",
+        "name:zh-Latn-pinyin": "Shŏujīngmào",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3137727,
+              39.8430745
+            ],
+            [
+              116.313978,
+              39.8430756
+            ],
+            [
+              116.3158552,
+              39.8430852
+            ],
+            [
+              116.3158534,
+              39.8432836
+            ],
+            [
+              116.3140076,
+              39.8432739
+            ],
+            [
+              116.3138024,
+              39.8432728
+            ],
+            [
+              116.3122475,
+              39.8432645
+            ],
+            [
+              116.3122493,
+              39.8430667
+            ],
+            [
+              116.3137727,
+              39.8430745
+            ]
+          ]
+        ]
+      },
+      "id": "way/672449120"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/854231897",
+        "area": "yes",
+        "departures_board": "realtime",
+        "layer": "-4",
+        "name": "清华东路西口（俸伯方向）",
+        "name:en": "Qinghuadongluxikou Eastbound",
+        "name:zh": "清华东路西口（俸伯方向）",
+        "name:zh-Hans": "清华东路西口（俸伯方向）",
+        "name:zh-Hant": "清華東路西口（俸伯方向）",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3342565,
+              39.9992978
+            ],
+            [
+              116.3330373,
+              39.9992768
+            ],
+            [
+              116.333039,
+              39.9992173
+            ],
+            [
+              116.3342583,
+              39.9992381
+            ],
+            [
+              116.3342565,
+              39.9992978
+            ]
+          ]
+        ]
+      },
+      "id": "way/854231897"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/854231898",
+        "area": "yes",
+        "departures_board": "realtime",
+        "layer": "-4",
+        "name": "清华东路西口（清华东路西口方向）",
+        "name:en": "Qinghuadongluxikou Westbound",
+        "name:zh": "清华东路西口（清华东路西口方向）",
+        "name:zh-Hans": "清华东路西口（清华东路西口方向）",
+        "name:zh-Hant": "清華東路西口（清華東路西口方向）",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3330352,
+              39.9993094
+            ],
+            [
+              116.3342549,
+              39.9993347
+            ],
+            [
+              116.3342529,
+              39.9993892
+            ],
+            [
+              116.3330332,
+              39.9993637
+            ],
+            [
+              116.3330352,
+              39.9993094
+            ]
+          ]
+        ]
+      },
+      "id": "way/854231898"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1003311491",
+        "area": "yes",
+        "departures_board": "yes",
+        "layer": "-2",
+        "level": "-2",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "surface": "paved"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.2332423,
+              39.8580707
+            ],
+            [
+              116.233285,
+              39.8579611
+            ],
+            [
+              116.2353211,
+              39.8584283
+            ],
+            [
+              116.2352786,
+              39.8585376
+            ],
+            [
+              116.2332423,
+              39.8580707
+            ]
+          ]
+        ]
+      },
+      "id": "way/1003311491"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1016803584",
+        "area": "yes",
+        "layer": "-5",
+        "location": "underground",
+        "name": "首经贸",
+        "name:en": "Shoujingmao",
+        "name:zh": "首经贸",
+        "name:zh-Hans": "首经贸",
+        "name:zh-Hant": "首經貿",
+        "name:zh-Latn-pinyin": "Shŏujīngmào",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.313978,
+              39.8430756
+            ],
+            [
+              116.3140076,
+              39.8432739
+            ],
+            [
+              116.314103,
+              39.8438969
+            ],
+            [
+              116.3139003,
+              39.8439151
+            ],
+            [
+              116.3138024,
+              39.8432728
+            ],
+            [
+              116.3137727,
+              39.8430745
+            ],
+            [
+              116.3137464,
+              39.8429034
+            ],
+            [
+              116.3139488,
+              39.8428852
+            ],
+            [
+              116.313978,
+              39.8430756
+            ]
+          ]
+        ]
+      },
+      "id": "way/1016803584"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1027279343",
+        "area": "yes",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4009111,
+              40.0012246
+            ],
+            [
+              116.4009125,
+              40.0011463
+            ],
+            [
+              116.4021749,
+              40.0011598
+            ],
+            [
+              116.4021735,
+              40.0012379
+            ],
+            [
+              116.4009111,
+              40.0012246
+            ]
+          ]
+        ]
+      },
+      "id": "way/1027279343"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1027315084",
+        "area": "yes",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4117813,
+              40.0015949
+            ],
+            [
+              116.411785,
+              40.0014951
+            ],
+            [
+              116.4134689,
+              40.001531
+            ],
+            [
+              116.4134652,
+              40.001631
+            ],
+            [
+              116.4117813,
+              40.0015949
+            ]
+          ]
+        ]
+      },
+      "id": "way/1027315084"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1027320040",
+        "area": "yes",
+        "layer": "-4",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3845471,
+              40.0009469
+            ],
+            [
+              116.3845525,
+              40.0007824
+            ],
+            [
+              116.3861809,
+              40.0008135
+            ],
+            [
+              116.3861756,
+              40.0009778
+            ],
+            [
+              116.3845471,
+              40.0009469
+            ]
+          ]
+        ]
+      },
+      "id": "way/1027320040"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1027325784",
+        "area": "yes",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3658943,
+              40.0206577
+            ],
+            [
+              116.3658929,
+              40.0205757
+            ],
+            [
+              116.3677279,
+              40.0205576
+            ],
+            [
+              116.3677293,
+              40.0206393
+            ],
+            [
+              116.3658943,
+              40.0206577
+            ]
+          ]
+        ]
+      },
+      "id": "way/1027325784"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1027329775",
+        "area": "yes",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3611789,
+              40.0001469
+            ],
+            [
+              116.3611832,
+              40.0000511
+            ],
+            [
+              116.3630604,
+              40.0001008
+            ],
+            [
+              116.3630561,
+              40.0001964
+            ],
+            [
+              116.3611789,
+              40.0001469
+            ]
+          ]
+        ]
+      },
+      "id": "way/1027329775"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1027332866",
+        "area": "yes",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3457635,
+              39.9996982
+            ],
+            [
+              116.3457677,
+              39.9996
+            ],
+            [
+              116.3475222,
+              39.9996444
+            ],
+            [
+              116.347518,
+              39.9997424
+            ],
+            [
+              116.3457635,
+              39.9996982
+            ]
+          ]
+        ]
+      },
+      "id": "way/1027332866"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1027437787",
+        "area": "yes",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4242053,
+              39.9998984
+            ],
+            [
+              116.4241869,
+              39.9997996
+            ],
+            [
+              116.4258544,
+              39.9996165
+            ],
+            [
+              116.4258729,
+              39.9997155
+            ],
+            [
+              116.4242053,
+              39.9998984
+            ]
+          ]
+        ]
+      },
+      "id": "way/1027437787"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1057775078",
+        "layer": "-6",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3624,
+              39.8111001
+            ],
+            [
+              116.3623994,
+              39.8111478
+            ],
+            [
+              116.3599687,
+              39.8111307
+            ],
+            [
+              116.3599692,
+              39.811083
+            ],
+            [
+              116.3624,
+              39.8111001
+            ]
+          ]
+        ]
+      },
+      "id": "way/1057775078"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1057775079",
+        "layer": "-6",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3624019,
+              39.8110312
+            ],
+            [
+              116.35997,
+              39.8110129
+            ],
+            [
+              116.3599706,
+              39.8109655
+            ],
+            [
+              116.3624025,
+              39.8109838
+            ],
+            [
+              116.3624019,
+              39.8110312
+            ]
+          ]
+        ]
+      },
+      "id": "way/1057775079"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1081361696",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.460721,
+              40.0196675
+            ],
+            [
+              116.4607479,
+              40.018756
+            ],
+            [
+              116.4608589,
+              40.0187579
+            ],
+            [
+              116.4608318,
+              40.0196695
+            ],
+            [
+              116.460721,
+              40.0196675
+            ]
+          ]
+        ]
+      },
+      "id": "way/1081361696"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127504",
+        "area": "yes",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4049745,
+              39.9152499
+            ],
+            [
+              116.4048199,
+              39.9152454
+            ],
+            [
+              116.4048735,
+              39.9141591
+            ],
+            [
+              116.4050281,
+              39.9141636
+            ],
+            [
+              116.4049745,
+              39.9152499
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127504"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127505",
+        "area": "yes",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4053527,
+              39.9073074
+            ],
+            [
+              116.4052977,
+              39.9083999
+            ],
+            [
+              116.4051171,
+              39.9083946
+            ],
+            [
+              116.4051721,
+              39.9073021
+            ],
+            [
+              116.4053527,
+              39.9073074
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127505"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127508",
+        "area": "yes",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3931003,
+              39.8900718
+            ],
+            [
+              116.393059,
+              39.890177
+            ],
+            [
+              116.3912498,
+              39.8897582
+            ],
+            [
+              116.3912912,
+              39.889653
+            ],
+            [
+              116.3931003,
+              39.8900718
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127508"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127513",
+        "area": "yes",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.392289,
+              39.8891179
+            ],
+            [
+              116.3921295,
+              39.8891137
+            ],
+            [
+              116.3921791,
+              39.888027
+            ],
+            [
+              116.3923386,
+              39.8880313
+            ],
+            [
+              116.392289,
+              39.8891179
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127513"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127514",
+        "area": "yes",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3925505,
+              39.881192
+            ],
+            [
+              116.3923906,
+              39.8811877
+            ],
+            [
+              116.3924325,
+              39.8802705
+            ],
+            [
+              116.3924402,
+              39.880101
+            ],
+            [
+              116.3926001,
+              39.8801053
+            ],
+            [
+              116.3925505,
+              39.881192
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127514"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127515",
+        "area": "yes",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3930963,
+              39.8652994
+            ],
+            [
+              116.3929273,
+              39.865294
+            ],
+            [
+              116.3929869,
+              39.8642001
+            ],
+            [
+              116.3931559,
+              39.8642055
+            ],
+            [
+              116.3930963,
+              39.8652994
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127515"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127518",
+        "area": "yes",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3920502,
+              39.8440509
+            ],
+            [
+              116.3920557,
+              39.8439354
+            ],
+            [
+              116.3934994,
+              39.8439755
+            ],
+            [
+              116.3934939,
+              39.8440911
+            ],
+            [
+              116.3920502,
+              39.8440509
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127518"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127520",
+        "area": "yes",
+        "layer": "1",
+        "light_rail": "no",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4427386,
+              39.7598914
+            ],
+            [
+              116.4426104,
+              39.7598671
+            ],
+            [
+              116.4429497,
+              39.7588083
+            ],
+            [
+              116.4430779,
+              39.7588326
+            ],
+            [
+              116.4427386,
+              39.7598914
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127520"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127521",
+        "area": "yes",
+        "layer": "1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4350663,
+              39.7717149
+            ],
+            [
+              116.4349736,
+              39.7716388
+            ],
+            [
+              116.436006,
+              39.770896
+            ],
+            [
+              116.4360988,
+              39.7709722
+            ],
+            [
+              116.4350663,
+              39.7717149
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127521"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127523",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3931191,
+              39.8576353
+            ],
+            [
+              116.393257,
+              39.85763
+            ],
+            [
+              116.393328,
+              39.8587161
+            ],
+            [
+              116.3931902,
+              39.8587214
+            ],
+            [
+              116.3931191,
+              39.8576353
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127523"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127525",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3941263,
+              39.8501042
+            ],
+            [
+              116.3940713,
+              39.8511914
+            ],
+            [
+              116.3939457,
+              39.8511877
+            ],
+            [
+              116.3940007,
+              39.8501005
+            ],
+            [
+              116.3941263,
+              39.8501042
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127525"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127527",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3949464,
+              39.8350184
+            ],
+            [
+              116.394888,
+              39.8361075
+            ],
+            [
+              116.394757,
+              39.8361033
+            ],
+            [
+              116.3948153,
+              39.8350143
+            ],
+            [
+              116.3949464,
+              39.8350184
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127527"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127528",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3958974,
+              39.814105
+            ],
+            [
+              116.3957345,
+              39.8140999
+            ],
+            [
+              116.3957923,
+              39.8130103
+            ],
+            [
+              116.3959552,
+              39.8130154
+            ],
+            [
+              116.3958974,
+              39.814105
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127536",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4123975,
+              39.7984989
+            ],
+            [
+              116.412261,
+              39.7984807
+            ],
+            [
+              116.4125024,
+              39.7974092
+            ],
+            [
+              116.4126389,
+              39.7974273
+            ],
+            [
+              116.4123975,
+              39.7984989
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127536"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158127537",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "train": "no"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4037837,
+              39.8038618
+            ],
+            [
+              116.4023593,
+              39.8038257
+            ],
+            [
+              116.4023645,
+              39.803705
+            ],
+            [
+              116.4037889,
+              39.803741
+            ],
+            [
+              116.4037837,
+              39.8038618
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158127537"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1158237699",
+        "building": "transportation",
+        "name": "西黄村站B口",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.2012245,
+              39.9327585
+            ],
+            [
+              116.2012193,
+              39.932621
+            ],
+            [
+              116.201489,
+              39.932615
+            ],
+            [
+              116.2014906,
+              39.9326552
+            ],
+            [
+              116.2014919,
+              39.9326912
+            ],
+            [
+              116.2013465,
+              39.9326945
+            ],
+            [
+              116.2013488,
+              39.9327557
+            ],
+            [
+              116.2012245,
+              39.9327585
+            ]
+          ]
+        ]
+      },
+      "id": "way/1158237699"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236281028",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4358292,
+              40.0676128
+            ],
+            [
+              116.4358217,
+              40.0666861
+            ],
+            [
+              116.4358873,
+              40.0666858
+            ],
+            [
+              116.435895,
+              40.0676125
+            ],
+            [
+              116.4358292,
+              40.0676128
+            ]
+          ]
+        ]
+      },
+      "id": "way/1236281028"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236281029",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.4360571,
+              40.0676046
+            ],
+            [
+              116.4360496,
+              40.0666778
+            ],
+            [
+              116.4361152,
+              40.0666775
+            ],
+            [
+              116.436123,
+              40.0676043
+            ],
+            [
+              116.4360571,
+              40.0676046
+            ]
+          ]
+        ]
+      },
+      "id": "way/1236281029"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1254390652",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3402231,
+              39.8234847
+            ],
+            [
+              116.3399878,
+              39.8216539
+            ],
+            [
+              116.3402654,
+              39.8216329
+            ],
+            [
+              116.3405006,
+              39.8234637
+            ],
+            [
+              116.3402231,
+              39.8234847
+            ]
+          ]
+        ]
+      },
+      "id": "way/1254390652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/93577772",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.2121588,
+            39.7935179
+          ],
+          [
+            116.2133949,
+            39.7937499
+          ]
+        ]
+      },
+      "id": "way/93577772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/120509267",
+        "layer": "2",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.6097443,
+            40.0519913
+          ],
+          [
+            116.6098577,
+            40.0512148
+          ]
+        ]
+      },
+      "id": "way/120509267"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/120509282",
+        "layer": "2",
+        "name": "Terminal 3",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.6095853,
+            40.051967
+          ],
+          [
+            116.6096892,
+            40.0512076
+          ]
+        ]
+      },
+      "id": "way/120509282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/120521111",
+        "layer": "-4",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.4556937,
+            39.9226366
+          ],
+          [
+            116.455721,
+            39.9213863
+          ],
+          [
+            116.4557214,
+            39.9213773
+          ]
+        ]
+      },
+      "id": "way/120521111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/120632863",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.2134212,
+            39.7936601
+          ],
+          [
+            116.2121868,
+            39.7934326
+          ]
+        ]
+      },
+      "id": "way/120632863"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/121777659",
+        "layer": "-4",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.2848354,
+            39.9969825
+          ],
+          [
+            116.2862719,
+            39.9964606
+          ]
+        ]
+      },
+      "id": "way/121777659"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/121777661",
+        "layer": "-4",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.2848112,
+            39.9969374
+          ],
+          [
+            116.2862508,
+            39.996425
+          ]
+        ]
+      },
+      "id": "way/121777661"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/157879212",
+        "layer": "2",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.2741118,
+            40.163914
+          ],
+          [
+            116.2745617,
+            40.1628715
+          ]
+        ]
+      },
+      "id": "way/157879212"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/157879214",
+        "layer": "2",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.274653,
+            40.1628935
+          ],
+          [
+            116.2742207,
+            40.1639446
+          ]
+        ]
+      },
+      "id": "way/157879214"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/232503311",
+        "layer": "-5",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "tunnel": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.4690362,
+            39.9420217
+          ],
+          [
+            116.4689209,
+            39.9439835
+          ]
+        ]
+      },
+      "id": "way/232503311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/232503312",
+        "layer": "-1",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "tunnel": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.4691386,
+            39.943988
+          ],
+          [
+            116.4692588,
+            39.9420217
+          ]
+        ]
+      },
+      "id": "way/232503312"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/925222943",
+        "operator": "北京地铁运营一分公司",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.2213256,
+            39.931433
+          ],
+          [
+            116.2203726,
+            39.9314366
+          ]
+        ]
+      },
+      "id": "way/925222943"
+    }
+  ]
+}
