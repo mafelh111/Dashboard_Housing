@@ -57,7 +57,21 @@ def load_composicion_data():
     composicion = pd.DataFrame(data)
     composicion = composicion.dropna(subset=['Ciudad Entera', 'Viviendas Urbanas', 'Viviendas rurales'])
     return composicion
-
+@st.cache_data
+def load_geojson_data(file_path):
+    st.write(f"Intentando cargar: {file_path}")  # Agregar esto
+    try:
+        gdf = gpd.read_file(file_path)
+        st.write("Archivo cargado con éxito.")  # Agregar esto
+        if 'geometry' in gdf.columns and '_geojson' not in gdf.columns:
+            gdf = gdf.rename(columns={'geometry': '_geojson'})
+        return gdf
+    except FileNotFoundError:
+        st.error(f"No se encontró el archivo: {file_path}")
+        return None
+    except Exception as e:
+        st.error(f"Error al cargar: {file_path}. Error: {e}")  # Agregar esto
+        return None
 @st.cache_data
 def load_data(file_path):
     try:
