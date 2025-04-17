@@ -522,11 +522,14 @@ def create_composicion_charts():
     fig2.update_layout(width=800, height=600, margin=dict(l=40, r=40, t=40, b=80))
 
     return fig1, fig2
+
 fig_tipos_vivienda, fig_fuentes_vivienda = create_composicion_charts()
 
 # --- Diseño del Dashboard ---
 st.title('Análisis Contextual del Mercado Inmobiliario de Pekín')
+
 tab1, tab2, tab3, tab4 = st.tabs(["Migración y Crecimiento", "PIB", "Composición de Vivienda", "Mapa"])
+
 with tab1:
     col1, col2 = st.columns(2)
     with col1:
