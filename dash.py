@@ -7,22 +7,23 @@ import geopandas as gpd
 
 # --- Carga de datos ---
 @st.cache_data
-def load_data(file_path):
+def load_migracion_data():
     try:
-        if file_path.endswith('.geojson') or file_path.endswith('.json'):
-            gdf = gpd.read_file(file_path)
-            return gdf
-        elif file_path.endswith('.csv'):
-            df = pd.read_csv(file_path)
-            return df
-        else:
-            st.error(f"Formato de archivo no soportado: {file_path}")
-            return None
-    except FileNotFoundError:
-        st.error(f"No se encontró el archivo: {file_path}")
-        return None
+        migracion = pd.read_csv('Migración.csv', sep=',', skiprows=3, encoding='utf-8', error_bad_lines=False, warn_bad_lines=True)
+        # ... (tu código para procesar migracion) ...
+        return migracion
     except Exception as e:
-        st.error(f"Error al cargar el archivo {file_path}: {e}")
+        st.error(f"Error al cargar Migración.csv: {e}")
+        return None
+
+@st.cache_data
+def load_pib_data():
+    try:
+        pib = pd.read_csv('Gdp.csv', sep=',', skiprows=3, encoding='utf-8', error_bad_lines=False, warn_bad_lines=True)
+        # ... (tu código para procesar pib) ...
+        return pib
+    except Exception as e:
+        st.error(f"Error al cargar Gdp.csv: {e}")
         return None
 
 migracion = load_data('Migración.csv')
