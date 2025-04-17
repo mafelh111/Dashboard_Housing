@@ -4,3 +4,4 @@ pandas
 numpy
 streamlit-keplergl
 keplergl
+streamlit.components.v1
